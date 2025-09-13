@@ -61,6 +61,7 @@ export const login = async (req, res) => {
             role: user.role
         }, process.env.JWT_AUTH_SECRET_KEY);
 
+      console.log("sigin with:", process.env.JWT_AUTH_SECRET_KEY);
 
         res.status(200).json({
             status: "success",
@@ -76,6 +77,7 @@ export const login = async (req, res) => {
         
     }
 }
+
 
 
 export const getUserProfile = async (req, res) => {
