@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "5a86cf26-70f1-47d1-8858-07cc5b1a806d",
+		"name": "AuthN_AuthZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46020646",
+		"_collection_link": "https://arun-8121192.postman.co/workspace/Arun's-Workspace~74f2ac52-eeaa-4881-8e21-7c8fae96a526/collection/46020646-5a86cf26-70f1-47d1-8858-07cc5b1a806d?action=share&source=collection_link&creator=46020646"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"joe \",\r\n    \"email\": \"joe135@gmail.com\",\r\n    \"password\": \"password1\",\r\n    \"role\" : \"Admin\",\r\n    \"gender\": \"Male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/register",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"arun12288@gmail.com\",\r\n    \"password\": \"password123\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/login",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzU1ZDFlZTBjZWE5ZjBlNzcyOGM0NSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc1Nzc2NDkxMX0.mKMWhgOAlINkbSNpUSFz-nWnux6KI7ZAaKf1uSk0F5E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4YzU2ODk1ZTE3ODM3ZjQ2NjYyNjQxOSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc1Nzc2Nzk1NH0.j6o4vdRH17_YNv3PdUr3_zZYXsbwqJ5l0xK-HJ_U6TA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/api/auth/profile",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": ""
+		}
+	]
+}
